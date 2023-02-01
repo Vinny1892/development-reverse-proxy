@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  reverseProxy:
+    build: 
+      context: .
+      dockerfile: ./docker/dockerfile
+    ports:
+      - "8088:443"
+    networks:
+      - nettest
+networks:
+  nettest:
+    name: nettest
+
+# Alterar nettest para rede do compose que for utilizar o proxy reverso
